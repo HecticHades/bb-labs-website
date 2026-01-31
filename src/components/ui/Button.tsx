@@ -21,22 +21,25 @@ interface ButtonProps {
 }
 
 const variants: Record<ButtonVariant, string> = {
-  default: "bg-muted text-foreground hover:bg-muted/80",
-  gradient: "gradient-bg text-white hover:opacity-90",
-  outline: "border border-border bg-transparent hover:bg-muted",
-  ghost: "bg-transparent hover:bg-muted",
+  default:
+    "bg-card-elevated text-foreground hover:bg-muted border border-border",
+  gradient:
+    "gradient-bg text-background font-semibold shadow-lg shadow-accent-primary/20 hover:shadow-accent-primary/30 hover:brightness-110",
+  outline:
+    "border border-border bg-transparent hover:bg-card hover:border-accent-primary/30 text-foreground",
+  ghost: "bg-transparent hover:bg-card text-foreground",
 };
 
 const sizes: Record<ButtonSize, string> = {
-  sm: "h-9 px-4 text-sm",
-  md: "h-10 md:h-11 lg:h-12 px-5 md:px-6 text-sm md:text-base",
-  lg: "h-12 md:h-14 lg:h-16 px-6 md:px-8 lg:px-10 text-base md:text-lg",
+  sm: "h-9 px-4 text-sm rounded-lg",
+  md: "h-10 sm:h-11 lg:h-12 px-5 sm:px-6 text-sm sm:text-base rounded-xl",
+  lg: "h-12 sm:h-14 lg:h-14 px-6 sm:px-8 text-base sm:text-lg rounded-xl",
 };
 
 const springTransition = {
   type: "spring" as const,
   stiffness: 400,
-  damping: 17,
+  damping: 25,
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -55,9 +58,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles = cn(
-      "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors transition-opacity duration-200",
-      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-purple focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+      "relative inline-flex items-center justify-center gap-2 font-medium transition-all duration-200",
+      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
       "disabled:opacity-50 disabled:pointer-events-none",
+      "active:scale-[0.98]",
       variants[variant],
       sizes[size],
       className
@@ -100,10 +104,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         type={type}
         disabled={disabled}
         className={baseStyles}
+        onClick={onClick}
         whileHover={{ scale: disabled ? 1 : 1.02 }}
         whileTap={{ scale: disabled ? 1 : 0.98 }}
         transition={springTransition}
-        onClick={onClick}
       >
         {children}
       </motion.button>

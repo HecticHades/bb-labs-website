@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   BB LABS - "Obsidian Flow" Design System
+   A sophisticated dark theme with warm copper accents & editorial typography
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 /* Container configuration for large screens */
 @layer base {
   .container {
@@ -8,7 +13,7 @@
 
   @media (min-width: 1536px) {
     .container {
-      max-width: 1400px;
+      max-width: 1440px;
     }
   }
 }
@@ -17,45 +22,85 @@
 @layer utilities {
   @media (min-width: 1280px) {
     .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
     }
   }
 
   @media (min-width: 1536px) {
     .container {
-      padding-left: 3rem;
-      padding-right: 3rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
     }
   }
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   Design Tokens - Obsidian Flow Palette
+   ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  --background: #0a0a0b;
-  --foreground: #fafafa;
-  --accent-blue: #3b82f6;
-  --accent-purple: #8b5cf6;
+  /* Obsidian Base */
+  --background: #09090b;
+  --background-elevated: #0f0f11;
+  --foreground: #fafaf9;
+  --foreground-muted: #a8a29e;
+
+  /* Warm Copper/Amber Accent */
+  --accent-primary: #f59e0b;
+  --accent-secondary: #d97706;
+  --accent-tertiary: #b45309;
+  --accent-glow: rgba(245, 158, 11, 0.15);
+
+  /* Surface Colors */
+  --card: #121214;
+  --card-elevated: #18181b;
+  --card-foreground: #fafaf9;
+
+  /* Borders & Dividers */
+  --border: #27272a;
+  --border-subtle: #1f1f22;
+  --border-accent: rgba(245, 158, 11, 0.3);
+
+  /* Semantic */
   --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-  --border: #3f3f46;
-  --card: #18181b;
-  --card-foreground: #fafafa;
+  --muted-foreground: #71717a;
+  --error: #ef4444;
+  --success: #22c55e;
+
+  /* Gradients */
+  --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
+  --gradient-mesh:
+    radial-gradient(at 40% 20%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(217, 119, 6, 0.06) 0px, transparent 50%),
+    radial-gradient(at 10% 90%, rgba(180, 83, 9, 0.04) 0px, transparent 50%);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
   --color-foreground: var(--foreground);
-  --color-accent-blue: var(--accent-blue);
-  --color-accent-purple: var(--accent-purple);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-tertiary: var(--accent-tertiary);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
   --color-card: var(--card);
+  --color-card-elevated: var(--card-elevated);
   --color-card-foreground: var(--card-foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-error: var(--error);
+  --color-success: var(--success);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-fraunces);
   --font-mono: var(--font-geist-mono);
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   Base Styles
+   ───────────────────────────────────────────────────────────────────────────── */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -64,6 +109,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -72,16 +119,142 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
 }
 
+/* Subtle ambient background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--gradient-mesh);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Selection */
 ::selection {
-  background: var(--accent-purple);
-  color: white;
+  background: var(--accent-primary);
+  color: var(--background);
 }
 
-/* Scrollbar styling */
+/* ─────────────────────────────────────────────────────────────────────────────
+   Typography Utilities
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Display/Headline font */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.03em;
+}
+
+/* Gradient text - warm copper */
+.gradient-text {
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Accent text glow effect */
+.text-glow {
+  text-shadow: 0 0 40px rgba(245, 158, 11, 0.4);
+}
+
+/* Editorial text styles */
+.text-editorial {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Gradient Utilities
+   ───────────────────────────────────────────────────────────────────────────── */
+.gradient-bg {
+  background: var(--gradient-warm);
+}
+
+.gradient-border {
+  position: relative;
+  background: var(--card);
+  border-radius: inherit;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: var(--gradient-warm);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Glass & Surface Effects
+   ───────────────────────────────────────────────────────────────────────────── */
+.glass {
+  background: rgba(18, 18, 20, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.glass-subtle {
+  background: rgba(18, 18, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Card hover glow effect */
+.card-glow {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-glow::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: var(--gradient-warm);
+  border-radius: inherit;
+  opacity: 0;
+  z-index: -1;
+  filter: blur(20px);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-glow:hover::after {
+  opacity: 0.15;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Noise & Texture Overlays
+   ───────────────────────────────────────────────────────────────────────────── */
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Scrollbar Styling
+   ───────────────────────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -90,34 +263,23 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 4px;
+  border-radius: 5px;
+  border: 2px solid var(--background);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted-foreground);
 }
 
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) var(--background);
 }
 
-/* Gradient background utility */
-.gradient-bg {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-}
-
-/* Glass effect */
-.glass {
-  background: rgba(24, 24, 27, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* Touch optimization */
+/* ─────────────────────────────────────────────────────────────────────────────
+   Touch & Interaction Optimization
+   ───────────────────────────────────────────────────────────────────────────── */
 button,
 a,
 input,
@@ -127,7 +289,72 @@ select,
   touch-action: manipulation;
 }
 
-/* Reduced motion */
+/* Focus visible states */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Custom Animations
+   ───────────────────────────────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  30% { transform: translate(3%, -15%); }
+  50% { transform: translate(-15%, 10%); }
+  70% { transform: translate(10%, 5%); }
+  90% { transform: translate(5%, 10%); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 158, 11, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Reduced Motion Support
+   ───────────────────────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -140,4 +367,60 @@ select,
   html {
     scroll-behavior: auto;
   }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Responsive Typography Scale
+   ───────────────────────────────────────────────────────────────────────────── */
+.text-hero {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.text-display {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.text-heading {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Utility Classes
+   ───────────────────────────────────────────────────────────────────────────── */
+.debug-grid {
+  background-image:
+    linear-gradient(rgba(245, 158, 11, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Hide scrollbar but allow scrolling */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

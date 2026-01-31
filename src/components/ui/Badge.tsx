@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-type BadgeVariant = "default" | "gradient" | "outline";
+type BadgeVariant = "default" | "gradient" | "outline" | "accent";
 
 interface BadgeProps {
   children: React.ReactNode;
@@ -12,15 +12,16 @@ interface BadgeProps {
 
 const variants: Record<BadgeVariant, string> = {
   default: "bg-muted text-muted-foreground",
-  gradient: "gradient-bg text-white",
-  outline: "border border-border bg-transparent text-foreground",
+  gradient: "gradient-bg text-background font-medium",
+  outline: "border border-border bg-transparent text-foreground hover:border-accent-primary/30 transition-colors",
+  accent: "bg-accent-primary/10 text-accent-primary border border-accent-primary/20",
 };
 
 export function Badge({ children, variant = "default", className }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center px-2.5 py-0.5 lg:px-3 lg:py-1 rounded-full text-xs lg:text-sm font-medium whitespace-nowrap overflow-hidden text-ellipsis max-w-full",
+        "inline-flex items-center px-2.5 py-1 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap",
         variants[variant],
         className
       )}

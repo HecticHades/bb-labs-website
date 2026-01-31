@@ -85,20 +85,23 @@ export function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="text-center py-12"
+        className="text-center py-12 sm:py-16"
       >
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: "spring" }}
-          className="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4"
+          className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-5 sm:mb-6 shadow-lg shadow-accent-primary/20"
         >
-          <CheckCircle className="w-8 h-8 text-white" aria-hidden="true" />
+          <CheckCircle
+            className="w-8 h-8 sm:w-10 sm:h-10 text-background"
+            aria-hidden="true"
+          />
         </motion.div>
-        <h3 className="text-xl font-semibold text-foreground mb-2">
+        <h3 className="font-display text-xl sm:text-2xl font-semibold text-foreground mb-2 sm:mb-3">
           Message Sent!
         </h3>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground text-sm sm:text-base">
           Thank you for reaching out. We&apos;ll get back to you within 24 hours.
         </p>
       </motion.div>
@@ -106,13 +109,13 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
         <Input
           id="name"
           name="name"
           label="Name"
-          placeholder="John Doe…"
+          placeholder="John Doe"
           autoComplete="name"
           value={formData.name}
           onChange={handleChange}
@@ -124,7 +127,7 @@ export function ContactForm() {
           name="email"
           type="email"
           label="Email"
-          placeholder="john@example.com…"
+          placeholder="john@example.com"
           autoComplete="email"
           spellCheck={false}
           value={formData.email}
@@ -138,7 +141,7 @@ export function ContactForm() {
         id="company"
         name="company"
         label="Company (Optional)"
-        placeholder="Your Company…"
+        placeholder="Your Company"
         autoComplete="organization"
         value={formData.company}
         onChange={handleChange}
@@ -149,7 +152,7 @@ export function ContactForm() {
         id="message"
         name="message"
         label="Message"
-        placeholder="Tell us about your project…"
+        placeholder="Tell us about your project..."
         value={formData.message}
         onChange={handleChange}
         error={errors.message}
@@ -160,9 +163,9 @@ export function ContactForm() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-2 text-red-500 text-sm"
+          className="flex items-center gap-2 text-error text-sm p-3 rounded-xl bg-error/10 border border-error/20"
         >
-          <AlertCircle className="w-4 h-4" aria-hidden="true" />
+          <AlertCircle className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
           Something went wrong. Please try again.
         </motion.div>
       )}
@@ -177,11 +180,11 @@ export function ContactForm() {
         {status === "submitting" ? (
           <>
             <motion.div
-              className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+              className="w-5 h-5 border-2 border-background border-t-transparent rounded-full"
               animate={{ rotate: 360 }}
               transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             />
-            Sending…
+            Sending...
           </>
         ) : (
           <>

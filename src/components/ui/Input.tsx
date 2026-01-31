@@ -24,16 +24,22 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           id={id}
           ref={ref}
           className={cn(
-            "w-full h-11 lg:h-12 px-4 lg:px-5 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground",
-            "transition-colors transition-shadow duration-200",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-purple focus-visible:border-transparent",
+            "w-full h-11 sm:h-12 px-4 sm:px-5 rounded-xl bg-card border border-border text-foreground placeholder:text-muted-foreground",
+            "transition-all duration-200",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/50 focus-visible:border-accent-primary/50",
+            "hover:border-border/80",
             "disabled:opacity-50 disabled:cursor-not-allowed",
-            error && "border-red-500 focus-visible:ring-red-500",
+            error && "border-error focus-visible:ring-error/50 focus-visible:border-error/50",
             className
           )}
           {...props}
         />
-        {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+        {error && (
+          <p className="mt-2 text-sm text-error flex items-center gap-1">
+            <span className="inline-block w-1 h-1 rounded-full bg-error" />
+            {error}
+          </p>
+        )}
       </div>
     );
   }
@@ -41,7 +47,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
 Input.displayName = "Input";
 
-interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   error?: string;
 }
@@ -62,16 +69,22 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           id={id}
           ref={ref}
           className={cn(
-            "w-full min-h-[120px] lg:min-h-[140px] px-4 lg:px-5 py-3 lg:py-4 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground",
-            "transition-colors transition-shadow duration-200 resize-y",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-purple focus-visible:border-transparent",
+            "w-full min-h-[120px] sm:min-h-[140px] px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-card border border-border text-foreground placeholder:text-muted-foreground",
+            "transition-all duration-200 resize-y",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/50 focus-visible:border-accent-primary/50",
+            "hover:border-border/80",
             "disabled:opacity-50 disabled:cursor-not-allowed",
-            error && "border-red-500 focus-visible:ring-red-500",
+            error && "border-error focus-visible:ring-error/50 focus-visible:border-error/50",
             className
           )}
           {...props}
         />
-        {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+        {error && (
+          <p className="mt-2 text-sm text-error flex items-center gap-1">
+            <span className="inline-block w-1 h-1 rounded-full bg-error" />
+            {error}
+          </p>
+        )}
       </div>
     );
   }
