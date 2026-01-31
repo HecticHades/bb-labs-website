@@ -5,37 +5,35 @@
    A sophisticated dark theme with warm copper accents & editorial typography
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Container configuration for large screens */
-@layer base {
+/* Container configuration - override Tailwind v4 defaults */
+.container {
+  width: 100%;
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
   .container {
-    width: 100%;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
+}
 
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
+@media (min-width: 1280px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
+}
 
-  @media (min-width: 1280px) {
-    .container {
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .container {
-      max-width: 1440px;
-      padding-left: 4rem;
-      padding-right: 4rem;
-    }
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1440px !important;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
@@ -103,12 +101,14 @@
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   Base Styles
+   Base Styles (in @layer base so utilities can override)
    ───────────────────────────────────────────────────────────────────────────── */
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 html {
