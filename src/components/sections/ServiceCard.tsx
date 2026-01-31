@@ -38,17 +38,17 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <TiltCard className="h-full p-6">
+      <TiltCard className="h-full p-6 lg:p-8">
         <div className="flex flex-col h-full">
-          <div className="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center mb-4">
-            <Icon className="w-6 h-6 text-white" aria-hidden="true" />
+          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 lg:mb-5">
+            <Icon className="w-6 h-6 lg:w-7 lg:h-7 text-white" aria-hidden="true" />
           </div>
 
-          <h3 className="text-xl font-semibold text-foreground mb-2">
+          <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-2 lg:mb-3">
             {service.title}
           </h3>
 
-          <p className="text-muted-foreground text-sm mb-4 flex-1 line-clamp-3">
+          <p className="text-muted-foreground text-sm lg:text-base mb-4 lg:mb-5 flex-1 line-clamp-3">
             {service.description}
           </p>
 

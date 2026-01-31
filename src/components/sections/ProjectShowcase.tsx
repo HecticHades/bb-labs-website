@@ -31,7 +31,7 @@ export function ProjectShowcase({ showAll = false, showFilter = false }: Project
   const displayProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
   return (
-    <section id="projects" className="py-20 lg:py-32 bg-card/50">
+    <section id="projects" className="py-20 lg:py-32 xl:py-40 bg-card/50">
       <div className="container mx-auto px-4">
         <SectionHeading
           badge="Our Work"
@@ -71,7 +71,7 @@ export function ProjectShowcase({ showAll = false, showFilter = false }: Project
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8"
           >
             {displayProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />

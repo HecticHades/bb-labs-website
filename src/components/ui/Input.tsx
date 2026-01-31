@@ -24,7 +24,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           id={id}
           ref={ref}
           className={cn(
-            "w-full h-11 px-4 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground",
+            "w-full h-11 lg:h-12 px-4 lg:px-5 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground",
             "transition-colors transition-shadow duration-200",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-purple focus-visible:border-transparent",
             "disabled:opacity-50 disabled:cursor-not-allowed",
@@ -62,7 +62,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           id={id}
           ref={ref}
           className={cn(
-            "w-full min-h-[120px] px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground",
+            "w-full min-h-[120px] lg:min-h-[140px] px-4 lg:px-5 py-3 lg:py-4 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground",
             "transition-colors transition-shadow duration-200 resize-y",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-purple focus-visible:border-transparent",
             "disabled:opacity-50 disabled:cursor-not-allowed",

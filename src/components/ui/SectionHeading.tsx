@@ -36,17 +36,17 @@ export function SectionHeading({
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3 }}
-          className="inline-block px-4 py-1.5 rounded-full text-sm font-medium gradient-bg text-white mb-4"
+          className="inline-block px-4 py-1.5 lg:px-5 lg:py-2 rounded-full text-sm lg:text-base font-medium gradient-bg text-white mb-4 lg:mb-6"
         >
           {badge}
         </motion.span>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground">
         {title}
       </h2>
       {subtitle && (
         <p className={cn(
-          "mt-4 text-base md:text-lg text-muted-foreground max-w-xl md:max-w-2xl",
+          "mt-4 lg:mt-6 text-base md:text-lg xl:text-xl text-muted-foreground max-w-xl md:max-w-2xl xl:max-w-3xl",
           centered && "mx-auto"
         )}>
           {subtitle}

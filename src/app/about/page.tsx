@@ -17,11 +17,11 @@ export default function AboutPage() {
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium gradient-bg text-white mb-4">
               About Us
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6">
               Building the{" "}
               <span className="gradient-text">Future of Software</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg xl:text-xl text-muted-foreground">
               We&apos;re a team of passionate engineers dedicated to creating
               exceptional digital experiences that drive business growth.
             </p>
@@ -42,12 +42,12 @@ export default function AboutPage() {
 
       <section className="py-20 lg:py-32 bg-card/50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-24 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-foreground mb-6">
                 Our Story
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 lg:space-y-5 text-muted-foreground lg:text-lg">
                 <p>
                   Founded with a vision to transform how businesses leverage technology,
                   BB Labs has grown from a small team of developers into a full-service

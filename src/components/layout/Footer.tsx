@@ -16,8 +16,8 @@ export function Footer() {
 
   return (
     <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="container mx-auto px-4 py-12 lg:py-16 xl:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 xl:gap-16">
           <div className="lg:col-span-1">
             <Logo className="mb-4" />
             <p className="text-muted-foreground text-sm mb-4 max-w-xs">

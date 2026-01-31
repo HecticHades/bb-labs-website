@@ -38,12 +38,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </motion.div>
         </div>
 
-        <div className="p-6">
-          <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:gradient-text transition-all duration-300">
+        <div className="p-6 lg:p-8">
+          <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-2 lg:mb-3 group-hover:gradient-text transition-all duration-300">
             {project.title}
           </h3>
 
-          <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+          <p className="text-muted-foreground text-sm lg:text-base mb-4 line-clamp-2">
             {project.description}
           </p>
 

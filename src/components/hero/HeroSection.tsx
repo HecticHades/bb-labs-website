@@ -15,8 +15,8 @@ export function HeroSection() {
       <GradientMesh />
       <InteractiveBackground />
 
-      <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="container mx-auto px-4 py-20 lg:py-32 xl:py-40 relative z-10">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center">
           <ParallaxContainer intensity={0.5}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 text-balance"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-6 lg:mb-8 text-balance"
             >
               We Build{" "}
               <span className="gradient-text">Digital Products</span>{" "}
@@ -44,7 +44,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
+              className="text-lg md:text-xl xl:text-2xl text-muted-foreground max-w-2xl xl:max-w-3xl mx-auto mb-8 lg:mb-10"
             >
               Transform your ideas into powerful, scalable applications.
               From web and mobile development to cloud solutions and AI integration.
@@ -54,7 +54,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6 mb-16 lg:mb-20"
             >
               <Button href="/contact" variant="gradient" size="lg">
                 Start Your Project
@@ -70,7 +70,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -80,10 +80,10 @@ export function HeroSection() {
                 transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-1">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm lg:text-base text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>

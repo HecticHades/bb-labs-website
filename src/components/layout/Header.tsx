@@ -36,7 +36,7 @@ export function Header() {
         )}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-16 lg:h-20 xl:h-24">
             <Logo />
 
             <Navigation className="hidden lg:flex" />

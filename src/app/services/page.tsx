@@ -16,11 +16,11 @@ export default function ServicesPage() {
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium gradient-bg text-white mb-4">
               Our Services
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6">
               Comprehensive{" "}
               <span className="gradient-text">Development Services</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg xl:text-xl text-muted-foreground">
               From concept to deployment, we provide end-to-end software development
               solutions tailored to your business needs.
             </p>

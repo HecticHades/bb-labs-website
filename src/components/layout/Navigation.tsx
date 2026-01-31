@@ -16,7 +16,7 @@ export function Navigation({ className, onItemClick, vertical = false }: Navigat
   const pathname = usePathname();
 
   return (
-    <nav className={cn("flex", vertical ? "flex-col gap-2" : "items-center gap-1", className)}>
+    <nav className={cn("flex", vertical ? "flex-col gap-2" : "items-center gap-1 xl:gap-2", className)}>
       {navigation.map((item) => {
         const isActive = pathname === item.href;
 

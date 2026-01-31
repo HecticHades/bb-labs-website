@@ -39,19 +39,19 @@ export default function ContactPage() {
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium gradient-bg text-white mb-4">
               Contact Us
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6">
               Let&apos;s Start a{" "}
               <span className="gradient-text">Conversation</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg xl:text-xl text-muted-foreground">
               Have a project in mind? We&apos;d love to hear about it.
               Fill out the form below and we&apos;ll get back to you shortly.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 max-w-6xl mx-auto">
             <div className="space-y-8">
-              <h2 className="text-2xl font-bold text-foreground">
+              <h2 className="text-2xl lg:text-3xl font-bold text-foreground">
                 Get in Touch
               </h2>
 
@@ -113,7 +113,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <div className="bg-card border border-border rounded-2xl p-6 lg:p-8">
+              <div className="bg-card border border-border rounded-2xl p-6 lg:p-8 xl:p-10">
                 <ContactForm />
               </div>
             </div>

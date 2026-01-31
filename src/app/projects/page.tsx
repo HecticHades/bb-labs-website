@@ -16,11 +16,11 @@ export default function ProjectsPage() {
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium gradient-bg text-white mb-4">
               Our Portfolio
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6">
               Projects That{" "}
               <span className="gradient-text">Make an Impact</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg xl:text-xl text-muted-foreground">
               Discover how we&apos;ve helped businesses across industries achieve
               their digital transformation goals.
             </p>

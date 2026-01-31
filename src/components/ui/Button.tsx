@@ -29,8 +29,8 @@ const variants: Record<ButtonVariant, string> = {
 
 const sizes: Record<ButtonSize, string> = {
   sm: "h-9 px-4 text-sm",
-  md: "h-10 md:h-11 px-5 md:px-6 text-sm md:text-base",
-  lg: "h-12 md:h-14 px-6 md:px-8 text-base md:text-lg",
+  md: "h-10 md:h-11 lg:h-12 px-5 md:px-6 text-sm md:text-base",
+  lg: "h-12 md:h-14 lg:h-16 px-6 md:px-8 lg:px-10 text-base md:text-lg",
 };
 
 const springTransition = {

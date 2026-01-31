@@ -12,7 +12,7 @@ export function ServicesGrid({ showAll = false }: ServicesGridProps) {
   const displayServices = showAll ? services : services.slice(0, 6);
 
   return (
-    <section id="services" className="py-20 lg:py-32">
+    <section id="services" className="py-20 lg:py-32 xl:py-40">
       <div className="container mx-auto px-4">
         <SectionHeading
           badge="What We Do"
@@ -20,7 +20,7 @@ export function ServicesGrid({ showAll = false }: ServicesGridProps) {
           subtitle="We offer comprehensive software development services tailored to your business needs."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
           {displayServices.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
           ))}
