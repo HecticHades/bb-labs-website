@@ -48,7 +48,7 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
             {service.title}
           </h3>
 
-          <p className="text-muted-foreground text-sm mb-4 flex-1">
+          <p className="text-muted-foreground text-sm mb-4 flex-1 line-clamp-3">
             {service.description}
           </p>
 

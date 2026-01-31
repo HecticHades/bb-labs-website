@@ -37,7 +37,8 @@ export function HeroSection() {
             >
               We Build{" "}
               <span className="gradient-text">Digital Products</span>
-              <br />
+              <span className="hidden md:inline"><br /></span>
+              <span className="md:hidden"> </span>
               That Drive Growth
             </motion.h1>
 
@@ -71,7 +72,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
           >
             {stats.map((stat, index) => (
               <motion.div

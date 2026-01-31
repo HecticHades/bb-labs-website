@@ -81,7 +81,7 @@ export function TiltCard({
           }}
         />
       )}
-      <div style={{ transform: "translateZ(20px)" }}>{children}</div>
+      <div className="relative" style={{ transform: "translateZ(20px)" }}>{children}</div>
     </motion.div>
   );
 }

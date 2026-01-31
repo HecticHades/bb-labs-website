@@ -40,7 +40,7 @@ export function Navigation({ className, onItemClick, vertical = false }: Navigat
                 className={cn(
                   "absolute gradient-bg",
                   vertical
-                    ? "left-0 top-0 w-1 h-full rounded-r"
+                    ? "left-0 top-0 w-1.5 h-full rounded-r"
                     : "bottom-0 left-2 right-2 h-0.5 rounded-full"
                 )}
                 transition={{ type: "spring", stiffness: 380, damping: 30 }}

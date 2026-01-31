@@ -26,7 +26,7 @@ export function ScrollIndicator({ targetId, className }: ScrollIndicatorProps) {
   return (
     <motion.button
       onClick={handleClick}
-      className={`flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors ${className}`}
+      className={`flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors min-h-[44px] min-w-[44px] p-2 ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1, duration: 0.5 }}

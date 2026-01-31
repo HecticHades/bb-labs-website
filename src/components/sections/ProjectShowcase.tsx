@@ -52,6 +52,7 @@ export function ProjectShowcase({ showAll = false, showFilter = false }: Project
                 onClick={() => setActiveCategory(category.id)}
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-purple focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                   activeCategory === category.id
                     ? "gradient-bg text-white"
                     : "bg-muted text-muted-foreground hover:text-foreground"

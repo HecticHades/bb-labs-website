@@ -49,8 +49,8 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 max-w-6xl mx-auto">
-            <div className="lg:col-span-2 space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
+            <div className="space-y-8">
               <h2 className="text-2xl font-bold text-foreground">
                 Get in Touch
               </h2>
@@ -112,7 +112,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-3">
+            <div>
               <div className="bg-card border border-border rounded-2xl p-6 lg:p-8">
                 <ContactForm />
               </div>

@@ -16,8 +16,8 @@ export function Logo({ className }: LogoProps) {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        <div className="relative w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
-          <span className="text-white font-bold text-lg">BB</span>
+        <div className="relative w-10 h-10 rounded-lg gradient-bg flex items-center justify-center flex-shrink-0 overflow-hidden">
+          <span className="text-white font-bold text-base">BB</span>
         </div>
         <span className="text-xl font-bold text-foreground">
           {siteConfig.name}

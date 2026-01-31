@@ -50,7 +50,8 @@ export function ContactCTA() {
               external
             >
               <Mail className="w-5 h-5" aria-hidden="true" />
-              {siteConfig.email}
+              <span className="hidden sm:inline">{siteConfig.email}</span>
+              <span className="sm:hidden">Email Us</span>
             </Button>
           </div>
         </motion.div>
