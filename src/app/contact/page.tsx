@@ -60,7 +60,7 @@ export default function ContactPage() {
                   <div key={item.title} className="flex gap-4">
                     <div className="flex-shrink-0">
                       <div className="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center">
-                        <item.icon className="w-6 h-6 text-white" />
+                        <item.icon className="w-6 h-6 text-white" aria-hidden="true" />
                       </div>
                     </div>
                     <div>

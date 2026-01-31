@@ -56,7 +56,7 @@ export function Header() {
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors lg:hidden"
                 aria-label="Open menu"
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-6 h-6" aria-hidden="true" />
               </button>
             </div>
           </div>

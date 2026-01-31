@@ -37,7 +37,7 @@ export function Footer() {
                   className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-5 h-5" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -83,7 +83,7 @@ export function Footer() {
                   href={`mailto:${siteConfig.email}`}
                   className="flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-4 h-4" aria-hidden="true" />
                   {siteConfig.email}
                 </a>
               </li>

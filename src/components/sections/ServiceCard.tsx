@@ -41,7 +41,7 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
       <TiltCard className="h-full p-6">
         <div className="flex flex-col h-full">
           <div className="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center mb-4">
-            <Icon className="w-6 h-6 text-white" />
+            <Icon className="w-6 h-6 text-white" aria-hidden="true" />
           </div>
 
           <h3 className="text-xl font-semibold text-foreground mb-2">

@@ -25,10 +25,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           className={cn(
             "w-full h-11 px-4 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground",
-            "transition-all duration-200",
-            "focus:outline-none focus:ring-2 focus:ring-accent-purple focus:border-transparent",
+            "transition-colors transition-shadow duration-200",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-purple focus-visible:border-transparent",
             "disabled:opacity-50 disabled:cursor-not-allowed",
-            error && "border-red-500 focus:ring-red-500",
+            error && "border-red-500 focus-visible:ring-red-500",
             className
           )}
           {...props}
@@ -63,10 +63,10 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           ref={ref}
           className={cn(
             "w-full min-h-[120px] px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground",
-            "transition-all duration-200 resize-y",
-            "focus:outline-none focus:ring-2 focus:ring-accent-purple focus:border-transparent",
+            "transition-colors transition-shadow duration-200 resize-y",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-purple focus-visible:border-transparent",
             "disabled:opacity-50 disabled:cursor-not-allowed",
-            error && "border-red-500 focus:ring-red-500",
+            error && "border-red-500 focus-visible:ring-red-500",
             className
           )}
           {...props}

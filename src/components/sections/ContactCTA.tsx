@@ -25,7 +25,7 @@ export function ContactCTA() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-6"
           >
-            <MessageSquare className="w-8 h-8 text-white" />
+            <MessageSquare className="w-8 h-8 text-white" aria-hidden="true" />
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -41,7 +41,7 @@ export function ContactCTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/contact" variant="gradient" size="lg">
               Start a Conversation
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Button>
             <Button
               href={`mailto:${siteConfig.email}`}
@@ -49,7 +49,7 @@ export function ContactCTA() {
               size="lg"
               external
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-5 h-5" aria-hidden="true" />
               {siteConfig.email}
             </Button>
           </div>

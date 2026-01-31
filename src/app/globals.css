@@ -87,6 +87,16 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
+/* Touch optimization */
+button,
+a,
+input,
+textarea,
+select,
+[role="button"] {
+  touch-action: manipulation;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,

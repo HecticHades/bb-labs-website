@@ -59,7 +59,7 @@ export function HeroSection() {
             >
               <Button href="/contact" variant="gradient" size="lg">
                 Start Your Project
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Button>
               <Button href="/projects" variant="outline" size="lg">
                 View Our Work

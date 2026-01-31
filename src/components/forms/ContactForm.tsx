@@ -93,7 +93,7 @@ export function ContactForm() {
           transition={{ delay: 0.2, type: "spring" }}
           className="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4"
         >
-          <CheckCircle className="w-8 h-8 text-white" />
+          <CheckCircle className="w-8 h-8 text-white" aria-hidden="true" />
         </motion.div>
         <h3 className="text-xl font-semibold text-foreground mb-2">
           Message Sent!
@@ -112,7 +112,8 @@ export function ContactForm() {
           id="name"
           name="name"
           label="Name"
-          placeholder="John Doe"
+          placeholder="John Doe…"
+          autoComplete="name"
           value={formData.name}
           onChange={handleChange}
           error={errors.name}
@@ -123,7 +124,9 @@ export function ContactForm() {
           name="email"
           type="email"
           label="Email"
-          placeholder="john@example.com"
+          placeholder="john@example.com…"
+          autoComplete="email"
+          spellCheck={false}
           value={formData.email}
           onChange={handleChange}
           error={errors.email}
@@ -135,7 +138,8 @@ export function ContactForm() {
         id="company"
         name="company"
         label="Company (Optional)"
-        placeholder="Your Company"
+        placeholder="Your Company…"
+        autoComplete="organization"
         value={formData.company}
         onChange={handleChange}
         disabled={status === "submitting"}
@@ -145,7 +149,7 @@ export function ContactForm() {
         id="message"
         name="message"
         label="Message"
-        placeholder="Tell us about your project..."
+        placeholder="Tell us about your project…"
         value={formData.message}
         onChange={handleChange}
         error={errors.message}
@@ -158,7 +162,7 @@ export function ContactForm() {
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center gap-2 text-red-500 text-sm"
         >
-          <AlertCircle className="w-4 h-4" />
+          <AlertCircle className="w-4 h-4" aria-hidden="true" />
           Something went wrong. Please try again.
         </motion.div>
       )}
@@ -177,12 +181,12 @@ export function ContactForm() {
               animate={{ rotate: 360 }}
               transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             />
-            Sending...
+            Sending…
           </>
         ) : (
           <>
             Send Message
-            <Send className="w-5 h-5" />
+            <Send className="w-5 h-5" aria-hidden="true" />
           </>
         )}
       </Button>
