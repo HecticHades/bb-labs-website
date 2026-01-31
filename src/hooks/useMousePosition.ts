@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, startTransition } from "react";
 import { MousePosition } from "@/types";
 
 interface UseMousePositionOptions {
@@ -28,7 +28,9 @@ export function useMousePosition(options: UseMousePositionOptions = {}) {
       }
 
       frameRef.current = requestAnimationFrame(() => {
-        setPosition({ x: clientX, y: clientY });
+        startTransition(() => {
+          setPosition({ x: clientX, y: clientY });
+        });
       });
     },
     [frameInterval]
@@ -90,11 +92,13 @@ export function useRelativeMousePosition(
     const percentX = (relX / rect.width) * 100;
     const percentY = (relY / rect.height) * 100;
 
-    setRelativePosition({
-      x: relX,
-      y: relY,
-      percentX: Math.max(0, Math.min(100, percentX)),
-      percentY: Math.max(0, Math.min(100, percentY)),
+    startTransition(() => {
+      setRelativePosition({
+        x: relX,
+        y: relY,
+        percentX: Math.max(0, Math.min(100, percentX)),
+        percentY: Math.max(0, Math.min(100, percentY)),
+      });
     });
   }, [x, y, isInViewport, ref]);
 

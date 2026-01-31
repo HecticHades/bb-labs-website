@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, startTransition } from "react";
 
 interface UseScrollProgressOptions {
   threshold?: number;
@@ -31,12 +31,14 @@ export function useScrollProgress(options: UseScrollProgressOptions = {}) {
     }
 
     frameRef.current = requestAnimationFrame(() => {
-      setProgress(Math.min(100, Math.max(0, newProgress)));
+      startTransition(() => {
+        setProgress(Math.min(100, Math.max(0, newProgress)));
 
-      if (Math.abs(scrollY - lastScrollY.current) > threshold) {
-        setDirection(scrollY > lastScrollY.current ? "down" : "up");
-        lastScrollY.current = scrollY;
-      }
+        if (Math.abs(scrollY - lastScrollY.current) > threshold) {
+          setDirection(scrollY > lastScrollY.current ? "down" : "up");
+          lastScrollY.current = scrollY;
+        }
+      });
     });
   }, [frameInterval, threshold]);
 
@@ -78,8 +80,10 @@ export function useElementScrollProgress(
       const currentPosition = visibleStart - elementTop;
       const newProgress = (currentPosition / totalDistance) * 100;
 
-      setProgress(Math.min(100, Math.max(0, newProgress)));
-      setIsInView(rect.top < windowHeight && rect.bottom > 0);
+      startTransition(() => {
+        setProgress(Math.min(100, Math.max(0, newProgress)));
+        setIsInView(rect.top < windowHeight && rect.bottom > 0);
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
