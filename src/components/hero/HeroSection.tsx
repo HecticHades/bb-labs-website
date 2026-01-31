@@ -20,7 +20,7 @@ export function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[calc(100dvh-4rem)] lg:min-h-[calc(100dvh-5rem)] -mt-16 lg:-mt-20 pt-16 lg:pt-20 flex items-center justify-center overflow-hidden"
     >
       <HeroBackground />
 

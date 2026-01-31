@@ -8,18 +8,21 @@
 /* Container configuration for large screens */
 @layer base {
   .container {
+    width: 100%;
     max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
-  @media (min-width: 1536px) {
+  @media (min-width: 640px) {
     .container {
-      max-width: 1440px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
-}
 
-/* Enhanced horizontal padding for large screens */
-@layer utilities {
   @media (min-width: 1280px) {
     .container {
       padding-left: 2.5rem;
@@ -29,6 +32,7 @@
 
   @media (min-width: 1536px) {
     .container {
+      max-width: 1440px;
       padding-left: 4rem;
       padding-right: 4rem;
     }

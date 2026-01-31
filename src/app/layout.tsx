@@ -71,7 +71,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Header />
-        <main id="main-content" className="min-h-screen">{children}</main>
+        <main id="main-content" className="min-h-screen pt-16 lg:pt-20">{children}</main>
         <Footer />
         <ScrollToTop />
       </body>

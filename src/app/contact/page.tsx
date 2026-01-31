@@ -33,7 +33,7 @@ const contactInfo = [
 
 export default function ContactPage() {
   return (
-    <div className="pt-20 sm:pt-24">
+    <div>
       <section className="py-12 sm:py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6">
           {/* Header */}

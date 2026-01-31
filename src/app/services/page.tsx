@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="pt-20 sm:pt-24">
+    <div>
       {/* Hero section */}
       <section className="py-12 sm:py-16 lg:py-24 relative overflow-hidden">
         {/* Background decoration */}
