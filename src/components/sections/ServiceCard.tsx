@@ -52,7 +52,7 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
             {service.description}
           </p>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 max-h-[72px] overflow-hidden">
             {service.features.map((feature) => (
               <Badge key={feature} variant="outline">
                 {feature}

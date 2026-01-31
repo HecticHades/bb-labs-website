@@ -63,11 +63,11 @@ export default function ContactPage() {
                         <item.icon className="w-6 h-6 text-white" aria-hidden="true" />
                       </div>
                     </div>
-                    <div>
+                    <div className="space-y-1">
                       <h3 className="font-semibold text-foreground">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground mb-1">
+                      <p className="text-sm text-muted-foreground">
                         {item.description}
                       </p>
                       {item.href ? (

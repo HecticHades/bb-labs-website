@@ -70,7 +70,7 @@ export function ValueProposition() {
                 Our team is ready to tackle your most challenging projects.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end">
+            <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
               <motion.a
                 href="/contact"
                 className="inline-flex items-center justify-center h-12 px-6 rounded-lg gradient-bg text-white font-medium"

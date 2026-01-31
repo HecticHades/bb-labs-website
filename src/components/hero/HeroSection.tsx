@@ -33,12 +33,10 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 text-balance"
             >
               We Build{" "}
-              <span className="gradient-text">Digital Products</span>
-              <span className="hidden md:inline"><br /></span>
-              <span className="md:hidden"> </span>
+              <span className="gradient-text">Digital Products</span>{" "}
               That Drive Growth
             </motion.h1>
 

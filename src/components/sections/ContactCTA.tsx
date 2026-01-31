@@ -49,8 +49,8 @@ export function ContactCTA() {
               size="lg"
               external
             >
-              <Mail className="w-5 h-5" aria-hidden="true" />
-              <span className="hidden sm:inline">{siteConfig.email}</span>
+              <Mail className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+              <span className="hidden sm:inline truncate max-w-[200px]">{siteConfig.email}</span>
               <span className="sm:hidden">Email Us</span>
             </Button>
           </div>

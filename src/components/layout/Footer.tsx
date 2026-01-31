@@ -81,9 +81,9 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm transition-colors"
+                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm transition-colors break-all"
                 >
-                  <Mail className="w-4 h-4" aria-hidden="true" />
+                  <Mail className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                   {siteConfig.email}
                 </a>
               </li>

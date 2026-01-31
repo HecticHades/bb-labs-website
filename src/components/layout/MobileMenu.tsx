@@ -43,7 +43,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 h-full w-[80%] min-w-[280px] max-w-sm bg-card border-l border-border z-50 lg:hidden overscroll-contain"
+            className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-card border-l border-border z-50 lg:hidden overscroll-contain"
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex items-center justify-between mb-8">
